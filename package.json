@@ -12,7 +12,7 @@
     "@reduxjs/toolkit": "^2.9.0",
     "bootstrap": "^5.3.8",
     "circletype": "^2.3.0",
-    "next": "15.5.2",
+    "next": "^16.2.1",
     "nodemailer": "^7.0.6",
     "react": "19.1.0",
     "react-countup": "^6.5.3",
@@ -40,7 +40,7 @@
     "@types/react-dom": "^19",
     "@types/vivus": "^0.4.7",
     "eslint": "^9",
-    "eslint-config-next": "15.5.2",
+    "eslint-config-next": "^16.2.1",
     "typescript": "^5"
   },
   "overrides": {
