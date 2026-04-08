@@ -52,7 +52,7 @@ const OffCanvas = ({ offCanvas, setOffCanvas }: MobileSidebarProps) => {
                </div>
                <div className="contact-list">
                   <i className="flaticon-envelope"></i>
-                  <Link href="mailto:info@beeko.com">info@beeko.com</Link>
+                  <Link href="mailto:explore@100exnextgen.com">explore@100exnextgen.com</Link>
                </div>
             </div>
             <div className="offCanvas__social">

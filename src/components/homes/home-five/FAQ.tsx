@@ -16,8 +16,8 @@ const FAq = () => {
                      </p>
                      <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
                         {[
-                           { icon: "✉️", label: "EMAIL", value: "hello@100exnextgen.com" },
-                           { icon: "📞", label: "PHONE", value: "+91 80 XXXX XXXX" },
+                           { icon: "✉️", label: "EMAIL", value: "ram@100exnextgen.com" },
+                           { icon: "📞", label: "PHONE", value: "+91 98458 45616" },
                            { icon: "📍", label: "LOCATION", value: "Bangalore, India" },
                         ].map((item, i) => (
                            <div key={i} style={{ display: "flex", alignItems: "center", gap: "16px" }}>

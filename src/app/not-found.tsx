@@ -2,7 +2,7 @@ import NotFound from "@/components/pages/error";
 import Wrapper from "@/layouts/Wrapper";
 
 export const metadata = {
-   title: "404 || Beeko - Business Consulting React Next js Template",
+   title: "404 - Page Not Found | 100exNextGen",
 };
 const NotFoundPage = () => {
    return (

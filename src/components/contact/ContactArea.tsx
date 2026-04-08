@@ -16,7 +16,7 @@ const ContactArea = () => {
                               <Link href="tel:0123456789">(+1) 123-456-3389</Link>
                            </li>
                            <li>
-                              <Link href="mailto:info@beeko.com">Sales@beeko.com</Link>
+                              <Link href="mailto:explore@100exnextgen.com">explore@100exnextgen.com</Link>
                            </li>
                         </ul>
                         <div className="shape">
@@ -34,7 +34,7 @@ const ContactArea = () => {
                               <Link href="tel:0123456789">(+1) 123-456-3389</Link>
                            </li>
                            <li>
-                              <Link href="mailto:info@beeko.com">Sales@beeko.com</Link>
+                              <Link href="mailto:explore@100exnextgen.com">explore@100exnextgen.com</Link>
                            </li>
                         </ul>
                         <div className="shape">
@@ -52,7 +52,7 @@ const ContactArea = () => {
                               <Link href="tel:0123456789">(+1) 123-456-3389</Link>
                            </li>
                            <li>
-                              <Link href="mailto:info@beeko.com">Sales@beeko.com</Link>
+                              <Link href="mailto:explore@100exnextgen.com">explore@100exnextgen.com</Link>
                            </li>
                         </ul>
                         <div className="shape">

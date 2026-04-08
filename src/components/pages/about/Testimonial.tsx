@@ -31,7 +31,7 @@ const testimonialData: ContentData[] = [
    {
       id: 1,
       name: "Mr. Robey Alexa",
-      designation: "CEO, Beeko Agency",
+      designation: "CEO, TechInnovate",
       desc: "“Excellent content and a real sense of community among the participant all curated in a wonderful setting. It is clear effort goes into the organization and planning of the gatherings. ”",
    },
    {
@@ -44,7 +44,7 @@ const testimonialData: ContentData[] = [
       id: 3,
       name: "Sophia Martinez",
       designation: "Product Manager, PixelPro",
-      desc: "Florem ipsum dolor sit amet, consectetur adipiscing elita florai sum dolor sit amet, consecteture.Borem ipsum consectetur adipiscinsit consectetur adipiscing.",
+      desc: "100exNextGen transformed our trajectory completely. Their hands-on approach and deep industry network helped us turn momentum into scalable success.",
    },
    {
       id: 4,

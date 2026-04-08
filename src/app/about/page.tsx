@@ -2,7 +2,7 @@ import About from "@/components/pages/about";
 import Wrapper from "@/layouts/Wrapper";
 
 export const metadata = {
-  title: "About Beeko - Business Consulting React Next js Template",
+  title: "About | 100exNextGen",
 };
 const page = () => {
   return (

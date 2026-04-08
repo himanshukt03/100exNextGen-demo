@@ -23,8 +23,8 @@ const menu_data: MenuItem[] = [
    {
       id: 2,
       has_dropdown: false,
-      title: "Our Model",
-      link: "/#model",
+      title: "Founders",
+      link: "/founders",
    },
    {
       id: 3,
@@ -47,11 +47,17 @@ const menu_data: MenuItem[] = [
    {
       id: 6,
       has_dropdown: false,
+      title: "Advisors",
+      link: "/advisors",
+   },
+   {
+      id: 7,
+      has_dropdown: false,
       title: "Insights",
       link: "/#insights",
    },
    {
-      id: 7,
+      id: 8,
       has_dropdown: false,
       title: "Contact Us",
       link: "/#contact",

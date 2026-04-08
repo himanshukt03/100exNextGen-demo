@@ -4,7 +4,7 @@ import AboutArea from './AboutArea'
 import Cta from '@/components/common/CtaOne'
 import Team from '@/components/common/TeamTwo'
 import Brand from './Brand'
-import FooterOne from '@/layouts/footers/FooterOne'
+import FooterThree from '@/layouts/footers/FooterThree'
 import HeaderSix from '@/layouts/headers/HeaderSix'
 import Testimonial from './Testimonial'
 
@@ -20,7 +20,7 @@ const About = () => {
         <Testimonial />
         <Brand />
       </main>
-      <FooterOne />
+      <FooterThree />
     </>
   )
 }

@@ -2,7 +2,7 @@ import Contact from "@/components/contact";
 import Wrapper from "@/layouts/Wrapper";
 
 export const metadata = {
-  title: "Contact Beeko - Business Consulting React Next js Template",
+  title: "Contact | 100exNextGen",
 };
 const page = () => {
   return (

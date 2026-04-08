@@ -1,5 +1,5 @@
 import BreadCrumb from "../common/BreadCrumb"
-import FooterOne from "@/layouts/footers/FooterOne"
+import FooterThree from "@/layouts/footers/FooterThree"
 import ContactArea from "./ContactArea"
 import ContactMap from "./ContactMap"
 import HeaderSix from "@/layouts/headers/HeaderSix"
@@ -15,7 +15,7 @@ const Contact = () => {
             <ContactArea />
             <Cta />
          </main>
-         <FooterOne style={true} />
+         <FooterThree />
       </>
    )
 }

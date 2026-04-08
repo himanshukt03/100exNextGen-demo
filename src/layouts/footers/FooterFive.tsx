@@ -75,7 +75,7 @@ const FooterFive = () => {
                <div className="row">
                   <div className="col-lg-12">
                      <div className="copyright__content">
-                        <p>Copyright © Beeko | All Right Reserved</p>
+                        <p>Copyright © 100exNextGen | All Right Reserved</p>
                      </div>
                   </div>
                </div>

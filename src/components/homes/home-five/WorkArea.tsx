@@ -39,6 +39,7 @@ const WorkArea = () => {
                                     src={work_img}
                                     alt="Founders We Want"
                                     fill
+                                    sizes="(max-width: 768px) 100vw, 50vw"
                                     style={{ objectFit: "cover" }}
                                 />
                                 <div style={{

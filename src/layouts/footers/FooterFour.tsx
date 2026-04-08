@@ -56,7 +56,7 @@ const FooterFour = () => {
                   <ul className="list-wrap">
                     <li><i className="flaticon-placeholder"></i>Sydney Harbour Circular City of Sydney,Australia.</li>
                     <li><i className="flaticon-telephone"></i><Link href="tel:0123456789">+123 888 9999</Link></li>
-                    <li><i className="flaticon-envelope"></i><Link href="mailto:info@beeko.com">info@beeko.com</Link></li>
+                    <li><i className="flaticon-envelope"></i><Link href="mailto:explore@100exnextgen.com">explore@100exnextgen.com</Link></li>
                   </ul>
                 </div>
               </div>
@@ -91,7 +91,7 @@ const FooterFour = () => {
       <div className="footer__bottom-five">
         <div className="container">
           <div className="copyright__content-four">
-            <p>Copyright © Beeko | All Right Reserved</p>
+            <p>Copyright © 100exNextGen | All Right Reserved</p>
           </div>
         </div>
       </div>

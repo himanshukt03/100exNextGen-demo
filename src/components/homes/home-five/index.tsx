@@ -8,6 +8,7 @@ import WorkArea from "./WorkArea"
 import Estimate from "./Estimate"
 import Team from "./Team"
 import Brand from "./Brand"
+import Advisors from "./Advisors"
 import Testimonial from "./Testimonial"
 import Blog from "./Blog"
 import FAq from "./FAQ"
@@ -26,6 +27,7 @@ const HomeFive = () => {
             <Estimate />
             <Team />
             <Brand />
+            <Advisors />
             <Testimonial />
             <Blog />
             <Cta />

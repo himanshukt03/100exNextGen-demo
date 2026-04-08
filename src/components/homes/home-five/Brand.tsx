@@ -16,7 +16,7 @@ const partners: { name: string; logo: string | null }[] = [
 
 const Brand = () => {
    return (
-      <section className="section-py-80" style={{ backgroundColor: "#FFFFFF", position: "relative", paddingTop: "80px", marginTop: "40px" }}>
+      <section className="section-py-80" style={{ backgroundColor: "#FFFFFF", position: "relative", paddingTop: "80px", paddingBottom: "100px", marginTop: "40px" }}>
          <div className="container">
             <div className="row justify-content-center">
                <div className="col-xl-7 col-lg-8">
@@ -58,10 +58,10 @@ const Brand = () => {
                               style={{
                                  objectFit: "contain",
                                  transition: "all 0.4s ease",
-                                 maxWidth: "100%",
                                  height: "auto",
+                                 width: "auto",
                               }}
-                              className="brand-logo"
+                              className={`brand-logo ${["ISRO, IN-Space", "EON Elevators", "Global TVS"].includes(partner.name) ? "brand-logo-small" : ""}`}
                            />
                            <span style={{ fontSize: "12px", fontWeight: 600, color: "#888", marginTop: "10px", textAlign: "center" }}>{partner.name}</span>
                         </>
@@ -83,6 +83,14 @@ const Brand = () => {
          </div>
 
          <style jsx>{`
+            :global(.brand-logo) {
+               max-width: 150px !important;
+               max-height: 55px !important;
+            }
+            :global(.brand-logo-small) {
+               max-width: 105px !important;
+               max-height: 54px !important;
+            }
             .brand-item:hover {
                background: rgba(0, 71, 255, 0.02);
             }
@@ -96,6 +104,14 @@ const Brand = () => {
                color: var(--tg-theme-primary) !important;
             }
             @media (max-width: 991px) {
+               :global(.brand-logo) {
+                  max-width: 100px !important;
+                  max-height: 30px !important;
+               }
+               :global(.brand-logo-small) {
+                  max-width: 65px !important;
+                  max-height: 32px !important;
+               }
                .brand-grid {
                   grid-template-columns: repeat(3, 1fr) !important;
                }

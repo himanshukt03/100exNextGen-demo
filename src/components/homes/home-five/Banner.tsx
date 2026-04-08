@@ -16,6 +16,7 @@ const Banner = () => {
                         src="/hero-image.avif"
                         alt="100exNextGen Hero"
                         fill
+                        sizes="50vw"
                         style={{ objectFit: "cover" }}
                         priority
                     />
@@ -29,15 +30,15 @@ const Banner = () => {
                     <div className="col-lg-6 col-md-12">
                         <div className="hero-content-wrap">
                             <span className="hero-subtitle">
-                                Startup Accelerator
+                                Scaling and Growing Enterprises
                             </span>
                             <h1 className="hero-title">
                                 Accelerating the Future with{" "}
                                 <span className="hero-100ex">100ex</span><span className="hero-nextgen">NextGen</span>
                             </h1>
                             <p className="hero-desc">
-                                We partner with visionary founders to build category-defining companies
-                                through hands-on support, strategic capital, and deep industry expertise.
+                                Growth partner for revenue-stage enterprises 
+                                (sector agnostic), and early-stage Space-Tech founders.
                             </p>
                             <div className="hero-btn-group">
                                 <Link href="/#contact" className="tg-btn tg-btn-seven hero-btn-main">
@@ -49,11 +50,12 @@ const Banner = () => {
 
                     {/* Mobile Hero Image (hidden on desktop) */}
                     <div className="col-12 d-block d-lg-none mt-4 mt-md-5">
-                        <div className="mobile-hero-image-wrap">
+                        <div className="mobile-hero-image-wrap" style={{ position: "relative" }}>
                             <Image
                                 src="/hero-image.avif"
                                 alt="100exNextGen Hero"
                                 fill
+                                sizes="100vw"
                                 style={{ objectFit: "cover" }}
                                 priority
                             />

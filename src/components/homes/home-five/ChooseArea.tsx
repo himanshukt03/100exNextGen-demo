@@ -22,8 +22,7 @@ const ChooseArea = () => {
                 <div className="row align-items-center">
                     <div className="col-lg-6 mb-50 mb-lg-0">
                         <div style={{ paddingRight: "40px" }}>
-                            <span style={{ color: "var(--tg-theme-primary)", fontWeight: 600, textTransform: "uppercase", letterSpacing: "2px", fontSize: "13px", marginBottom: "12px", display: "inline-block" }}>Portfolio</span>
-                            <h2 style={{ fontSize: "clamp(32px, 4vw, 48px)", fontWeight: 800, color: "#1A1A1A", marginBottom: "20px", letterSpacing: "-1px", lineHeight: 1.15 }}>Building our <br />First Cohort</h2>
+                            <h2 style={{ fontSize: "clamp(32px, 4vw, 48px)", fontWeight: 800, color: "#1A1A1A", marginBottom: "20px", letterSpacing: "-1px", lineHeight: 1.15 }}>Building our <br />Portfolio of Companies</h2>
                             <p style={{ fontSize: "18px", color: "#555", lineHeight: 1.7, marginBottom: "36px", maxWidth: "520px" }}>
                                 We back founders building category-defining platforms. If you are ready for a hands-on partnership beyond just capital, let&apos;s talk.
                             </p>
@@ -48,7 +47,7 @@ const ChooseArea = () => {
                             </ul>
                             <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
                                 <Link href="/#contact" className="tg-btn tg-btn-seven">Tell us about your company <Arrow /></Link>
-                                <Link href="/#model" className="tg-btn tg-btn-seven outline-btn-custom">Explore our model</Link>
+                                <Link href="/founders" className="tg-btn tg-btn-seven outline-btn-custom">Explore our model</Link>
                             </div>
                         </div>
                     </div>
@@ -66,6 +65,7 @@ const ChooseArea = () => {
                                     src="/classmates-learning-together-group-study.jpg"
                                     alt="Building our First Cohort"
                                     fill
+                                    sizes="(max-width: 768px) 100vw, 50vw"
                                     style={{ objectFit: "cover" }}
                                 />
                                 <div style={{
