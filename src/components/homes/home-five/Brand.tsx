@@ -7,7 +7,7 @@ const partners: { name: string; logo: string | null }[] = [
    { name: "IFIN Global", logo: "/logos/ifin-global.png" },
    { name: "ARAI Solutions", logo: "/logos/arai_new_5_black.png" },
    { name: "OneSpace Technologies", logo: "/logos/OneSpace+Logo_oWhiteAlpha.webp" },
-   { name: "Harvey Aerospace", logo: null },
+   { name: "Harpy Aerospace", logo: "/logos/harpyaerospace_logo.jpg" },
    { name: "ISRO, IN-Space", logo: "/logos/Indian_Space_Research_Organisation_Logo.svg" },
    { name: "Plane Aerospace", logo: null },
    { name: "EON Elevators", logo: "/logos/eon.png" },
@@ -61,7 +61,7 @@ const Brand = () => {
                                  height: "auto",
                                  width: "auto",
                               }}
-                              className={`brand-logo ${["ISRO, IN-Space", "EON Elevators", "Global TVS"].includes(partner.name) ? "brand-logo-small" : ""}`}
+                              className="brand-logo"
                            />
                            <span style={{ fontSize: "12px", fontWeight: 600, color: "#888", marginTop: "10px", textAlign: "center" }}>{partner.name}</span>
                         </>
@@ -84,12 +84,8 @@ const Brand = () => {
 
          <style jsx>{`
             :global(.brand-logo) {
-               max-width: 150px !important;
-               max-height: 55px !important;
-            }
-            :global(.brand-logo-small) {
-               max-width: 105px !important;
-               max-height: 54px !important;
+               max-width: 160px !important;
+               max-height: 65px !important;
             }
             .brand-item:hover {
                background: rgba(0, 71, 255, 0.02);

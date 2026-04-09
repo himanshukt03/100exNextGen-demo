@@ -1,5 +1,5 @@
 'use server'
-import nodemailer from 'nodemailer'
+import { sendContactEmail as sendContactEmailService } from '@/lib/contact'
 
 interface EmailResult {
    success: boolean
@@ -7,42 +7,21 @@ interface EmailResult {
 }
 
 export async function sendContactEmail(formData: FormData): Promise<EmailResult> {
-   const user_name = formData.get('user_name') as string | null
-   const user_email = formData.get('user_email') as string | null
+   const user_name =
+      (formData.get('user_name') as string | null) ??
+      (formData.get('name') as string | null)
+   const user_email =
+      (formData.get('user_email') as string | null) ??
+      (formData.get('email') as string | null)
    const message = formData.get('message') as string | null
 
-   if (!user_name || !user_email || !message) {
-      return { success: false, error: 'Missing required fields' }
-   }
-
-   const transporter = nodemailer.createTransport({
-      service: 'gmail',
-      auth: {
-         user: process.env.EMAIL_USER!,
-         pass: process.env.EMAIL_PASS!,
-      },
+   const result = await sendContactEmailService({
+      name: user_name?.trim() ?? '',
+      email: user_email?.trim() ?? '',
+      message: message?.trim() ?? '',
    })
 
-   const mailOptions = {
-      from: `"Contact Form" <${process.env.EMAIL_USER}>`,
-      to: process.env.EMAIL_TO!,
-      subject: `New message from ${user_name}`,
-      html: `
-      <p><strong>Name:</strong> ${user_name}</p>
-      <p><strong>Email:</strong> ${user_email}</p>
-      <p><strong>Message:</strong><br>${message}</p>
-    `,
-   }
-
-   try {
-      await transporter.sendMail(mailOptions)
-      return { success: true }
-   } catch (err: unknown) {
-      console.error('Email send error:', err)
-      let errorMessage = 'Unknown error'
-      if (err instanceof Error) errorMessage = err.message
-      return { success: false, error: errorMessage }
-   }
+   return result
 }
 
 export async function handleContactFormAction(

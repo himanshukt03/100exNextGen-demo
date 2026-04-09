@@ -2,12 +2,21 @@
 import React, { useRef, useState } from 'react'
 import { toast } from 'react-toastify'
 
+const WEB3FORMS_ACCESS_KEY =
+   process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY ??
+   'e2f3426f-24fd-472c-b564-50bac442e030'
+
 const ContactForm = () => {
    const formRef = useRef<HTMLFormElement>(null)
    const [loading, setLoading] = useState(false)
 
    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault()
+
+      if (!e.currentTarget.checkValidity()) {
+         e.currentTarget.reportValidity()
+         return
+      }
       
       const formData = new FormData(e.currentTarget)
       const name = formData.get("name")?.toString().trim() || ""
@@ -31,15 +40,18 @@ const ContactForm = () => {
       }
 
       setLoading(true)
-      formData.append("access_key", "e2f3426f-24fd-472c-b564-50bac442e030")
+      formData.set('name', name)
+      formData.set('email', email)
+      formData.set('message', message)
+      formData.set('access_key', WEB3FORMS_ACCESS_KEY)
 
       try {
-         const response = await fetch("https://api.web3forms.com/submit", {
-            method: "POST",
-            body: formData
+         const response = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            body: formData,
          })
 
-         const data = await response.json()
+         const data = (await response.json()) as { success?: boolean; message?: string }
          
          if (data.success) {
             toast.success('Your message has been sent successfully!', { position: "bottom-right" })
@@ -47,7 +59,7 @@ const ContactForm = () => {
          } else {
             toast.error(data.message || 'Failed to send message.', { position: "bottom-right" })
          }
-      } catch (error) {
+      } catch {
          toast.error('An error occurred. Please try again.', { position: "bottom-right" })
       }
       
@@ -59,7 +71,7 @@ const ContactForm = () => {
          <div className="row">
             <div className="col-md-6">
                <div className="form-grp">
-                  <input type="text" name="name" placeholder="Your Name" required />
+                  <input type="text" name="name" placeholder="Your Name" minLength={2} required />
                </div>
             </div>
             <div className="col-md-6">
@@ -69,7 +81,7 @@ const ContactForm = () => {
             </div>
          </div>
          <div className="form-grp">
-            <textarea name="message" placeholder="Your Message" required></textarea>
+            <textarea name="message" placeholder="Your Message" minLength={20} required></textarea>
          </div>
          <button type="submit" className="tg-btn tg-btn-seven" disabled={loading}>
             {loading ? 'Sending...' : 'Send Message'}

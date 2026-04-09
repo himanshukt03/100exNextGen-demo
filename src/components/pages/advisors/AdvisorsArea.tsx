@@ -87,12 +87,13 @@ const AdvisorsArea = () => {
                                     boxShadow: "0 40px 80px rgba(0,0,0,0.1)",
                                 }}>
                                     <Image
-                                        src="/advisors-hero.jpg"
+                                        src="/advisors-hero.png"
                                         alt="Advisory board meeting"
                                         fill
                                         sizes="(max-width: 768px) 100vw, 50vw"
                                         style={{ objectFit: "cover" }}
                                         priority
+                                        quality={85}
                                     />
                                     <div style={{
                                         position: "absolute", inset: 0,
@@ -194,11 +195,12 @@ const AdvisorsArea = () => {
                                     zIndex: 2,
                                 }}>
                                     <Image
-                                        src="/advisors-hero.jpg"
-                                        alt="Advisors Narrative"
+                                        src="/business-partners-making-negotiations-before-deal.jpg"
+                                        alt="Ideal Advisor Profile"
                                         fill
                                         sizes="(max-width: 768px) 100vw, 50vw"
                                         style={{ objectFit: "cover" }}
+                                        quality={75}
                                     />
                                     <div style={{
                                         position: "absolute",

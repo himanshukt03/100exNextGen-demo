@@ -1,5 +1,6 @@
 "use client"
 import Link from 'next/link'
+import insightsData from '@/data/InsightsData'
 
 const Blog = () => {
    return (
@@ -18,11 +19,7 @@ const Blog = () => {
                </div>
             </div>
             <div className="row gutter-y-30 justify-content-center">
-               {[
-                  { id: 1, num: "01", source: "Boston Consulting Group (BCG)", title: "Your Growth Strategy Depends on Your Starting Point", color: "#1565C0", href: "https://www.bcg.com/publications/2024/your-revenue-strategy-depends-on-your-starting-point" },
-                  { id: 2, num: "02", source: "First Round Review", title: "The PMF Framework: How to Measure Product-Market Fit", color: "#0047FF", href: "https://review.firstround.com/how-to-measure-product-market-fit/" },
-                  { id: 3, num: "03", source: "Springer Nature", title: "Why Early-Stage Software Startups Fail: A Behavioral Framework", color: "#2E7D32", href: "https://link.springer.com/chapter/10.1007/978-3-319-08738-2_3" },
-               ].map((item) => (
+               {insightsData.slice(0, 3).map((item) => (
                   <div key={item.id} className="col-lg-4 col-md-6">
                      <div className="insight-card" style={{
                         background: "#FAFAFA", borderRadius: "12px", padding: "32px 28px", border: "1px solid #eee",
