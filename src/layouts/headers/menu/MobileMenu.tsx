@@ -11,6 +11,14 @@ const MobileMenus = () => {
    const isMenuItemActive = (menuLink: string) => currentRoute === menuLink;
    const isSubMenuItemActive = (subMenuLink: string) => currentRoute === subMenuLink;
 
+   const handleContactScroll = (e: React.MouseEvent<HTMLAnchorElement>, link: string) => {
+      if (link === '/#contact' && typeof window !== 'undefined' && window.location.pathname === '/') {
+         e.preventDefault();
+         document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+         window.history.pushState(null, '', '/#contact');
+      }
+   };
+
    // toggle parent menu
    const toggleMenu = (menu: string) => {
       setNavTitle((prev) => (prev === menu ? "" : menu));
@@ -36,7 +44,7 @@ const MobileMenus = () => {
                            ? "active"
                            : ""
                            }`}
-                        onClick={() => toggleMenu(menu.title)}
+                        onClick={(e) => { toggleMenu(menu.title); handleContactScroll(e, menu.link); }}
                      >
                         {menu.title}
                      </Link>
@@ -56,7 +64,7 @@ const MobileMenus = () => {
                                  <Link
                                     href={sub_m.link}
                                     className={sub_m.link && isSubMenuItemActive(sub_m.link) ? "active" : ""}
-                                    onClick={() => toggleSubMenu(sub_m.title)}
+                                    onClick={(e) => { toggleSubMenu(sub_m.title); handleContactScroll(e, sub_m.link); }}
                                  >
                                     {sub_m.title}
                                  </Link>
@@ -75,6 +83,7 @@ const MobileMenus = () => {
                                                 <Link
                                                    href={inner.link}
                                                    className={isSubMenuItemActive(inner.link) ? "active" : ""}
+                                                   onClick={(e) => handleContactScroll(e, inner.link)}
                                                 >
                                                    {inner.title}
                                                 </Link>
@@ -90,7 +99,7 @@ const MobileMenus = () => {
                   </li>
                ) : (
                   <li>
-                     <Link href={menu.link} className={isMenuItemActive(menu.link) ? "active" : ""}>
+                     <Link href={menu.link} className={isMenuItemActive(menu.link) ? "active" : ""} onClick={(e) => handleContactScroll(e, menu.link)}>
                         {menu.title}
                      </Link>
                   </li>

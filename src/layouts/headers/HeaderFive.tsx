@@ -11,6 +11,14 @@ const HeaderFive = () => {
    const { sticky } = UseSticky();
    const [sidebar, setSidebar] = useState<boolean>(false);
 
+   const handleContactScroll = (e: React.MouseEvent<HTMLAnchorElement>) => {
+      if (typeof window !== 'undefined' && window.location.pathname === '/') {
+         e.preventDefault();
+         document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+         window.history.pushState(null, '', '/#contact');
+      }
+   };
+
    return (
       <header>
          <div id="header-fixed-height"></div>
@@ -42,7 +50,7 @@ const HeaderFive = () => {
                      <div className="tgmenu__action tgmenu__action-seven">
                         <ul className="list-wrap">
                            <li className="header-btn">
-                              <Link href="/#contact" className="tg-btn tg-btn-seven">Partner with Us</Link>
+                              <Link href="/#contact" className="tg-btn tg-btn-seven" onClick={handleContactScroll}>Partner with Us</Link>
                            </li>
                         </ul>
                      </div>

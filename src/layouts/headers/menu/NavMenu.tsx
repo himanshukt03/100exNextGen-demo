@@ -1,9 +1,18 @@
+"use client"
 import menu_data from "@/data/MenuData";
 import Link from "next/link.js";
 import { usePathname } from "next/navigation";
 
 const NavMenu = () => {
    const currentRoute = usePathname();
+
+   const handleContactScroll = (e: React.MouseEvent<HTMLAnchorElement>, link: string) => {
+      if (link === '/#contact' && typeof window !== 'undefined' && window.location.pathname === '/') {
+         e.preventDefault();
+         document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+         window.history.pushState(null, '', '/#contact');
+      }
+   };
 
    const isMenuItemActive = (menuLink: string) => {
       return currentRoute === menuLink;
@@ -17,7 +26,7 @@ const NavMenu = () => {
       <ul className="navigation">
          {menu_data.map((menu) => (
             <li key={menu.id} className={menu.has_dropdown ? "menu-item-has-children" : ""}>
-               <Link href={menu.link} className={`${(isMenuItemActive(menu.link) || (menu.sub_menus && menu.sub_menus.some((sub_m) => sub_m.link && isSubMenuItemActive(sub_m.link)))) ? "active" : ""}`}>
+               <Link href={menu.link} onClick={(e) => handleContactScroll(e, menu.link)} className={`${(isMenuItemActive(menu.link) || (menu.sub_menus && menu.sub_menus.some((sub_m) => sub_m.link && isSubMenuItemActive(sub_m.link)))) ? "active" : ""}`}>
                   {menu.title}
                </Link>
                {menu.has_dropdown && (
@@ -25,7 +34,7 @@ const NavMenu = () => {
                      <ul className="sub-menu">
                         {menu.sub_menus.map((sub_m, i) => (
                            <li key={i} className={sub_m.inner_sub_menus ? "menu-item-has-children" : ""}>
-                              <Link href={sub_m.link} className={sub_m.link && isSubMenuItemActive(sub_m.link) ? "active" : ""}>
+                              <Link href={sub_m.link} onClick={(e) => handleContactScroll(e, sub_m.link)} className={sub_m.link && isSubMenuItemActive(sub_m.link) ? "active" : ""}>
                                  {sub_m.title}
                               </Link>
                               {sub_m.inner_sub_menus && (
@@ -34,6 +43,7 @@ const NavMenu = () => {
                                        <li key={i}>
                                           <Link
                                              href={inner_sub_m.link}
+                                             onClick={(e) => handleContactScroll(e, inner_sub_m.link)}
                                              className={
                                                 inner_sub_m.link && isSubMenuItemActive(inner_sub_m.link) ? "active" : ""}>
                                              {inner_sub_m.title}
