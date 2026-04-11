@@ -12,8 +12,8 @@ const HeaderFourTop = () => {
                <div className="col-lg-7">
                   <div className="tg-header__top-info">
                      <ul className="list-wrap">
-                        <li><i className="flaticon-placeholder"></i>256 Avenue, Mark Street, NewYork City</li>
-                        <li><i className="flaticon-envelope"></i><Link href="mailto:info@gmail.com">info@gmail.com</Link></li>
+                        <li><i className="flaticon-placeholder"></i>Bangalore, India</li>
+                        <li><i className="flaticon-envelope"></i><Link href="mailto:ram@100exnextgen.com">ram@100exnextgen.com</Link></li>
                      </ul>
                   </div>
                </div>
@@ -21,7 +21,7 @@ const HeaderFourTop = () => {
                   <div className="tg-header__top-right">
                      <ul className="list-wrap">
                         <li className="log-in">
-                           <Link href="/contact"><InjectableSvg src={lock.src} alt="" className="injectable" />Log in</Link>
+                           <Link href="/#contact"><InjectableSvg src={lock.src} alt="" className="injectable" />Log in</Link>
                         </li>
                         <li>
                            <div className="tg-header__top-social">

@@ -33,26 +33,26 @@ const OffCanvas = ({ offCanvas, setOffCanvas }: MobileSidebarProps) => {
             </div>
             <div className="offCanvas__img">
                <ul className="list-wrap">
-                  <li><Link href="#"><Image src={insta_img1} alt="img" /></Link></li>
-                  <li><Link href="#"><Image src={insta_img2} alt="img" /></Link></li>
-                  <li><Link href="#"><Image src={insta_img3} alt="img" /></Link></li>
-                  <li><Link href="#"><Image src={insta_img4} alt="img" /></Link></li>
-                  <li><Link href="#"><Image src={insta_img5} alt="img" /></Link></li>
-                  <li><Link href="#"><Image src={insta_img6} alt="img" /></Link></li>
+                  <li><Link href="/#contact"><Image src={insta_img1} alt="img" /></Link></li>
+                  <li><Link href="/#contact"><Image src={insta_img2} alt="img" /></Link></li>
+                  <li><Link href="/#contact"><Image src={insta_img3} alt="img" /></Link></li>
+                  <li><Link href="/#contact"><Image src={insta_img4} alt="img" /></Link></li>
+                  <li><Link href="/#contact"><Image src={insta_img5} alt="img" /></Link></li>
+                  <li><Link href="/#contact"><Image src={insta_img6} alt="img" /></Link></li>
                </ul>
             </div>
             <div className="offCanvas__side-info">
                <div className="contact-list">
                   <i className="flaticon-placeholder"></i>
-                  <p>Sydney Harbour Circular City of Sydney,Australia.</p>
+                  <p>Bangalore, India</p>
                </div>
                <div className="contact-list">
                   <i className="flaticon-telephone"></i>
-                  <Link href="tel:0123456789">+123 888 9999</Link>
+                  <Link href="tel:+919845845616">+91 98458 45616</Link>
                </div>
                <div className="contact-list">
                   <i className="flaticon-envelope"></i>
-                  <Link href="mailto:explore@100exnextgen.com">explore@100exnextgen.com</Link>
+                  <Link href="mailto:ram@100exnextgen.com">ram@100exnextgen.com</Link>
                </div>
             </div>
             <div className="offCanvas__social">

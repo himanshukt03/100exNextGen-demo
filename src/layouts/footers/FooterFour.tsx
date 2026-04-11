@@ -25,7 +25,7 @@ const FooterFour = () => {
             </div>
             <div className="col-lg-3">
               <div className="footer__inquiry-btn text-end">
-                <Link href="/contact" className="tg-btn tg-hover-btn">Let&apos;s Work Together <InjectableSvg src={arrow.src} alt="" className="injectable" /></Link>
+                <Link href="/#contact" className="tg-btn tg-hover-btn">Let&apos;s Work Together <InjectableSvg src={arrow.src} alt="" className="injectable" /></Link>
               </div>
             </div>
           </div>

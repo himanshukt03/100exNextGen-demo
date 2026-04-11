@@ -41,10 +41,10 @@ const FooterTwo = () => {
                         <h4 className="footer__widget-title">Quick links</h4>
                         <ul className="footer__widget-link list-wrap">
                            <li><Link href="/about">How it&apos;s Work</Link></li>
-                           <li><Link href="/contact">Partners</Link></li>
-                           <li><Link href="/contact">Testimonials</Link></li>
+                           <li><Link href="/#contact">Partners</Link></li>
+                           <li><Link href="/#contact">Testimonials</Link></li>
                            <li><Link href="/project">Case Studiesa</Link></li>
-                           <li><Link href="/contact">Pricing</Link></li>
+                           <li><Link href="/#contact">Pricing</Link></li>
                         </ul>
                      </div>
                   </div>

@@ -33,10 +33,10 @@ const HeaderThree = () => {
                      <div className="tgmenu__action tgmenu__action-four">
                         <ul className="list-wrap">
                            <li className="header-contact">
-                              <Link href="tel:0123456789" className="header-contact-info"><i className="flaticon-telephone"></i>+123 4880 4089</Link>
+                              <Link href="tel:+919845845616" className="header-contact-info"><i className="flaticon-telephone"></i>+91 98458 45616</Link>
                            </li>
                            <li className="header-btn header-btn-three">
-                              <Link href="/contact" className="tg-btn">Let’s Make a Meting</Link>
+                              <Link href="/#contact" className="tg-btn">Let’s Make a Meting</Link>
                            </li>
                         </ul>
                      </div>

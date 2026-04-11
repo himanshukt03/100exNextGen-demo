@@ -23,10 +23,10 @@ const Cta = () => {
                            </div>
                            <div className="content">
                               <span>Call For More Info</span>
-                              <Link href="tel:0123456789">+123 8989 444</Link>
+                              <Link href="tel:+919845845616">+91 98458 45616</Link>
                            </div>
                         </div>
-                        <Link href="/contact" className="tg-btn tg-border-btn ">Read More <Arrow /></Link>
+                        <Link href="/#contact" className="tg-btn tg-border-btn ">Join Us <Arrow /></Link>
                      </div>
                   </div>
                </div>

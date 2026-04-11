@@ -29,7 +29,7 @@ const FooterThree = () => {
                <div className="col-lg-2 col-md-6">
                   <h4 style={{ fontSize: "14px", fontWeight: 700, color: "rgba(255,255,255,0.9)", marginBottom: "20px", textTransform: "uppercase", letterSpacing: "1px" }}>Stakeholders</h4>
                   <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "12px" }}>
-                     {[{ label: "Investors", href: "/#investors" }, { label: "Partners", href: "/#partners" }, { label: "Founders", href: "/#contact" }].map((item, i) => (
+                     {[{ label: "Investors", href: "/#investors" }, { label: "Partners", href: "/#contact" }, { label: "Founders", href: "/#contact" }].map((item, i) => (
                         <li key={i}><Link href={item.href} style={{ fontSize: "14px", color: "rgba(255,255,255,0.45)", textDecoration: "none", transition: "color 0.3s" }}>{item.label}</Link></li>
                      ))}
                   </ul>

@@ -31,7 +31,7 @@ const HeaderOne = () => {
                            <div className="tgmenu__action tgmenu__action-two">
                               <ul className="list-wrap">
                                  <li className="header-btn header-btn-two">
-                                    <Link href="/register" className="tg-btn">Sing Up</Link>
+                                    <Link href="/#contact" className="tg-btn">Apply Now</Link>
                                  </li>
                               </ul>
                            </div>

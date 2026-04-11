@@ -31,10 +31,10 @@ const HeaderTwo = () => {
                            <div className="tgmenu__action tgmenu__action-three">
                               <ul className="list-wrap">
                                  <li className="header-contact">
-                                    <Link href="tel:0123456789" className="header-contact-info"><i className="flaticon-telephone"></i>+123 4880 4089</Link>
+                                    <Link href="tel:+919845845616" className="header-contact-info"><i className="flaticon-telephone"></i>+91 98458 45616</Link>
                                  </li>
                                  <li className="header-btn header-btn-two">
-                                    <Link href="/contact" className="tg-btn">Get a quote</Link>
+                                    <Link href="/#contact" className="tg-btn">Get a quote</Link>
                                  </li>
                               </ul>
                            </div>

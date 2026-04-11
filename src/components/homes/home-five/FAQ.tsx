@@ -121,7 +121,10 @@ const FAq = () => {
                                  <option value="" disabled>Select one</option>
                                  <option value="Founder">Founder</option>
                                  <option value="Investor">Investor</option>
-                                 <option value="Channel Partner">Channel Partner</option>
+                                 <option value="Strategic Partner">Strategic Partner</option>
+                                 <option value="Advisor">Advisor</option>
+                                 <option value="Industry Expert">Industry Expert</option>
+                                 <option value="Media / Press">Media / Press</option>
                                  <option value="Other">Other</option>
                               </select>
                               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#999" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ position: "absolute", right: "16px", top: "50%", transform: "translateY(-50%)", pointerEvents: "none" }}>

@@ -43,7 +43,7 @@ const HeaderSix = () => {
                                     <a onClick={() => setIsSearch(true)} style={{ cursor: "pointer" }} className="search-open-btn"><i className="flaticon-search"></i></a>
                                  </li>
                                  <li className="header-btn">
-                                    <Link href="/contact" className="tg-btn tg-btn-four tg-btn-five">Get a Quote <InjectableSvg src={arrow_1.src} alt="" className="injectable" /></Link>
+                                    <Link href="/#contact" className="tg-btn tg-btn-four tg-btn-five">Get a Quote <InjectableSvg src={arrow_1.src} alt="" className="injectable" /></Link>
                                  </li>
                                  <li className="offCanvas-menu">
                                     <a onClick={() => setOffCanvas(true)} style={{ cursor: "pointer" }} className="menu-tigger">
