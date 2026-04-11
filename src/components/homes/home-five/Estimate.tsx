@@ -2,6 +2,13 @@ import Link from "next/link"
 import Arrow from "@/components/common/Arrow"
 
 const Estimate = () => {
+   const handleContactScroll = (e: React.MouseEvent<HTMLAnchorElement>) => {
+      if (typeof window !== 'undefined' && window.location.pathname === '/') {
+         e.preventDefault();
+         document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+         window.history.pushState(null, '', '/#contact');
+      }
+   };
    return (
       <section id="investors" className="section-py-130" style={{ backgroundColor: "#FAFAFA" }}>
          <div className="container">
@@ -28,7 +35,7 @@ const Estimate = () => {
                            </div>
                         ))}
                      </div>
-                     <Link href="/#contact" className="tg-btn tg-btn-seven">Start a conversation <Arrow /></Link>
+                     <Link href="/#contact" className="tg-btn tg-btn-seven" onClick={handleContactScroll}>Start a conversation <Arrow /></Link>
                   </div>
                </div>
                <div className="col-lg-6">
@@ -52,7 +59,7 @@ const Estimate = () => {
                            </li>
                         ))}
                      </ul>
-                     <Link href="/#contact" className="tg-btn tg-btn-seven" style={{ background: "transparent", border: "1px solid var(--tg-theme-primary)", color: "var(--tg-theme-primary)" }}>
+                     <Link href="/#contact" className="tg-btn tg-btn-seven" style={{ background: "transparent", border: "1px solid var(--tg-theme-primary)", color: "var(--tg-theme-primary)" }} onClick={handleContactScroll}>
                         Join the founding LP circle <Arrow />
                      </Link>
                   </div>

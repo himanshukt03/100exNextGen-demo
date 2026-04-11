@@ -4,6 +4,14 @@ import Image from "next/image"
 import Arrow from "@/components/common/Arrow"
 
 const About = () => {
+   const handleContactScroll = (e: React.MouseEvent<HTMLAnchorElement>) => {
+      if (typeof window !== 'undefined' && window.location.pathname === '/') {
+         e.preventDefault();
+         document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+         window.history.pushState(null, '', '/#contact');
+      }
+   };
+
    return (
       <section id="about" className="about__area-six section-py-130" style={{ backgroundColor: "#FFFFFF" }}>
          <div className="container">
@@ -35,7 +43,7 @@ const About = () => {
                      <p style={{ fontSize: "17px", color: "#555", lineHeight: 1.7, marginBottom: "32px" }}>
                         Our mission is to empower visionaries across these sectors with the infrastructure and expertise necessary to transform established momentum into breakthrough global success.
                      </p>
-                     <Link href="/#model" className="tg-btn tg-btn-seven">Explore Our Model <Arrow /></Link>
+                     <Link href="/#contact" className="tg-btn tg-btn-seven" onClick={handleContactScroll}>Explore Our Model <Arrow /></Link>
                   </div>
                </div>
                <div className="col-lg-6">

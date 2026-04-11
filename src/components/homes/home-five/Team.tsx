@@ -6,6 +6,13 @@ import Arrow from "@/components/common/Arrow"
 
 
 const Team = () => {
+    const handleContactScroll = (e: React.MouseEvent<HTMLAnchorElement>) => {
+        if (typeof window !== 'undefined' && window.location.pathname === '/') {
+            e.preventDefault();
+            document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+            window.history.pushState(null, '', '/#contact');
+        }
+    };
     const partners_data = [
         { id: 1, title: "Access to Innovation", desc: "Connect with cutting-edge companies and emerging technologies.", icon: "flaticon-idea" },
         { id: 2, title: "Collaborative Marketing", desc: "Joint ventures and co-branded initiatives that amplify reach.", icon: "flaticon-megaphone" },
@@ -81,7 +88,7 @@ const Team = () => {
                             </div>
 
                             <div style={{ marginTop: "16px" }}>
-                                <Link href="/#contact" className="tg-btn tg-btn-seven">Become a Partner <Arrow /></Link>
+                                <Link href="/#contact" className="tg-btn tg-btn-seven" onClick={handleContactScroll}>Become a Partner <Arrow /></Link>
                             </div>
                         </div>
                     </div>

@@ -11,6 +11,13 @@ const list_data = [
 ];
 
 const ChooseArea = () => {
+    const handleContactScroll = (e: React.MouseEvent<HTMLAnchorElement>) => {
+        if (typeof window !== 'undefined' && window.location.pathname === '/') {
+            e.preventDefault();
+            document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+            window.history.pushState(null, '', '/#contact');
+        }
+    };
     return (
         <section id="portfolio" style={{
             backgroundColor: "#f4f6f8",
@@ -46,7 +53,7 @@ const ChooseArea = () => {
                                 ))}
                             </ul>
                             <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
-                                <Link href="/#contact" className="tg-btn tg-btn-seven">Tell us about your company <Arrow /></Link>
+                                <Link href="/#contact" className="tg-btn tg-btn-seven" onClick={handleContactScroll}>Tell us about your company <Arrow /></Link>
                                 <Link href="/founders" className="tg-btn tg-btn-seven outline-btn-custom">Explore our model</Link>
                             </div>
                         </div>
