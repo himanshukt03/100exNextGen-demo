@@ -2,12 +2,15 @@
 import Link from "next/link"
 
 const FooterThree = () => {
-   const handleContactScroll = (e: React.MouseEvent<HTMLAnchorElement>) => {
-      // Check if it's the exact contact hash and we are on the homepage
-      if (typeof window !== 'undefined' && window.location.pathname === '/') {
-         e.preventDefault();
-         document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-         window.history.pushState(null, '', '/#contact');
+   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, link: string) => {
+      // Check if it's an anchor hash and we are on the homepage
+      if (link.startsWith('/#') && typeof window !== 'undefined' && window.location.pathname === '/') {
+         const targetId = link.substring(2);
+         if (targetId) {
+            e.preventDefault();
+            document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth' });
+            window.history.pushState(null, '', link);
+         }
       }
    };
    return (
@@ -29,24 +32,24 @@ const FooterThree = () => {
                <div className="col-lg-2 col-md-6">
                   <h4 style={{ fontSize: "14px", fontWeight: 700, color: "rgba(255,255,255,0.9)", marginBottom: "20px", textTransform: "uppercase", letterSpacing: "1px" }}>Company</h4>
                   <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "12px" }}>
-                     {[{ label: "About", href: "/#about" }, { label: "Our Model", href: "/#contact" }, { label: "Portfolio", href: "/#contact" }].map((item, i) => (
-                        <li key={i}><Link href={item.href} onClick={item.href === '/#contact' ? handleContactScroll : undefined} style={{ fontSize: "14px", color: "rgba(255,255,255,0.45)", textDecoration: "none", transition: "color 0.3s" }}>{item.label}</Link></li>
+                     {[{ label: "About", href: "/#about" }, { label: "Our Model", href: "/#model" }, { label: "Portfolio", href: "/#portfolio" }].map((item, i) => (
+                        <li key={i}><Link href={item.href} onClick={(e) => handleScroll(e, item.href)} style={{ fontSize: "14px", color: "rgba(255,255,255,0.45)", textDecoration: "none", transition: "color 0.3s" }}>{item.label}</Link></li>
                      ))}
                   </ul>
                </div>
                <div className="col-lg-2 col-md-6">
                   <h4 style={{ fontSize: "14px", fontWeight: 700, color: "rgba(255,255,255,0.9)", marginBottom: "20px", textTransform: "uppercase", letterSpacing: "1px" }}>Stakeholders</h4>
                   <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "12px" }}>
-                     {[{ label: "Investors", href: "/#investors" }, { label: "Partners", href: "/#contact" }, { label: "Founders", href: "/#contact" }].map((item, i) => (
-                        <li key={i}><Link href={item.href} onClick={item.href === '/#contact' ? handleContactScroll : undefined} style={{ fontSize: "14px", color: "rgba(255,255,255,0.45)", textDecoration: "none", transition: "color 0.3s" }}>{item.label}</Link></li>
+                     {[{ label: "Investors", href: "/#investors" }, { label: "Partners", href: "/#partners" }, { label: "Founders", href: "/founders" }].map((item, i) => (
+                        <li key={i}><Link href={item.href} onClick={(e) => handleScroll(e, item.href)} style={{ fontSize: "14px", color: "rgba(255,255,255,0.45)", textDecoration: "none", transition: "color 0.3s" }}>{item.label}</Link></li>
                      ))}
                   </ul>
                </div>
                <div className="col-lg-2 col-md-6">
                   <h4 style={{ fontSize: "14px", fontWeight: 700, color: "rgba(255,255,255,0.9)", marginBottom: "20px", textTransform: "uppercase", letterSpacing: "1px" }}>Resources</h4>
                   <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "12px" }}>
-                     {[{ label: "Advisors", href: "/#advisors" }, { label: "Insights", href: "/#insights" }, { label: "Contact", href: "/#contact" }].map((item, i) => (
-                        <li key={i}><Link href={item.href} onClick={item.href === '/#contact' ? handleContactScroll : undefined} style={{ fontSize: "14px", color: "rgba(255,255,255,0.45)", textDecoration: "none", transition: "color 0.3s" }}>{item.label}</Link></li>
+                     {[{ label: "Advisors", href: "/advisors" }, { label: "Insights", href: "/#insights" }, { label: "Contact", href: "/#contact" }].map((item, i) => (
+                        <li key={i}><Link href={item.href} onClick={(e) => handleScroll(e, item.href)} style={{ fontSize: "14px", color: "rgba(255,255,255,0.45)", textDecoration: "none", transition: "color 0.3s" }}>{item.label}</Link></li>
                      ))}
                   </ul>
                </div>

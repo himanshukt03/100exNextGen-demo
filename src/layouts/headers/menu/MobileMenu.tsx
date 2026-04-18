@@ -12,11 +12,14 @@ const MobileMenus = () => {
    const isMenuItemActive = (menuLink: string) => currentRoute === menuLink;
    const isSubMenuItemActive = (subMenuLink: string) => currentRoute === subMenuLink;
 
-   const handleContactScroll = (e: React.MouseEvent<HTMLAnchorElement>, link: string) => {
-      if (link === '/#contact' && typeof window !== 'undefined' && window.location.pathname === '/') {
-         e.preventDefault();
-         document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-         window.history.pushState(null, '', '/#contact');
+   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, link: string) => {
+      if (link.startsWith('/#') && typeof window !== 'undefined' && window.location.pathname === '/') {
+         const targetId = link.substring(2); // Remove '/#'
+         if (targetId) {
+            e.preventDefault();
+            document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth' });
+            window.history.pushState(null, '', link);
+         }
       }
    };
 
@@ -45,7 +48,7 @@ const MobileMenus = () => {
                            ? "active"
                            : ""
                            }`}
-                        onClick={(e) => { toggleMenu(menu.title); handleContactScroll(e, menu.link); }}
+                        onClick={(e) => { toggleMenu(menu.title); handleScroll(e, menu.link); }}
                      >
                         {menu.title}
                      </Link>
@@ -65,7 +68,7 @@ const MobileMenus = () => {
                                  <Link
                                     href={sub_m.link}
                                     className={sub_m.link && isSubMenuItemActive(sub_m.link) ? "active" : ""}
-                                    onClick={(e) => { toggleSubMenu(sub_m.title); handleContactScroll(e, sub_m.link); }}
+                                    onClick={(e) => { toggleSubMenu(sub_m.title); handleScroll(e, sub_m.link); }}
                                  >
                                     {sub_m.title}
                                  </Link>
@@ -84,7 +87,7 @@ const MobileMenus = () => {
                                                 <Link
                                                    href={inner.link}
                                                    className={isSubMenuItemActive(inner.link) ? "active" : ""}
-                                                   onClick={(e) => handleContactScroll(e, inner.link)}
+                                                   onClick={(e) => handleScroll(e, inner.link)}
                                                 >
                                                    {inner.title}
                                                 </Link>
@@ -100,7 +103,7 @@ const MobileMenus = () => {
                   </li>
                ) : (
                   <li>
-                     <Link href={menu.link} className={isMenuItemActive(menu.link) ? "active" : ""} onClick={(e) => handleContactScroll(e, menu.link)}>
+                     <Link href={menu.link} className={isMenuItemActive(menu.link) ? "active" : ""} onClick={(e) => handleScroll(e, menu.link)}>
                         {menu.title}
                      </Link>
                   </li>

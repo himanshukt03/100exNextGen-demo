@@ -30,7 +30,7 @@ const menu_data: MenuItem[] = [
       id: 3,
       has_dropdown: false,
       title: "Portfolio",
-      link: "/#contact",
+      link: "/#portfolio",
    },
    {
       id: 4,
@@ -42,7 +42,7 @@ const menu_data: MenuItem[] = [
       id: 5,
       has_dropdown: false,
       title: "Partners",
-      link: "/#contact",
+      link: "/#partners",
    },
    {
       id: 6,
